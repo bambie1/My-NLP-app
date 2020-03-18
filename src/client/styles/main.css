@@ -1,0 +1,9 @@
+/* $bg: grey;
+
+body {
+    background: $bg;
+} */
+
+main {
+    min-height: 81vh;
+}
