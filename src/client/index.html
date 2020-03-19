@@ -13,29 +13,40 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-light bg-light">
+        <nav class="bg-light justify-content-center navbar navbar-light">
             <a class="navbar-brand" href="#">
-                News Language Processing
+                NEWS LANGUAGE PROCESSING
             </a>
         </nav>
     </header>
 
     <main class="container">
+        <div>
+            <h1>Welcome to the NLP center!</h1>
+            <p>If you're hoping to classify a new article or document of any kind into useful, quantifiable data, you're
+                in the right place.</p>
+            <p>This app uses the <em>aylien API</em> to perform this task.</p>
+            <p>So, let's dive right in! Please enter the URL to the article you wish to classify in the form below...
+            </p>
+            <hr>
+        </div>
         <section class="py-4">
-            <form class="" onsubmit="return handleSubmit(event)">
-                <input id="url" type="text" name="input" value="" placeholder="Please enter an article url">
+            <form class="pb-4" onsubmit="return handleSubmit(event)">
+                <input id="url" type="text" name="input" value="" placeholder="Please enter an article url" size=50>
                 <button type="submit" id="submit">Submit</button>
             </form>
 
-            <section>
+            <section class="api-info">
                 <strong>Form Results:</strong>
-                <div id="results"></div>
+                <div id="results" style="height:30vh; width:100%; clear:both;">
+                </div>
+
             </section>
         </section>
     </main>
 
-    <footer>
-        <p>This is a footer</p>
+    <footer class="bg-light text-center">
+        <p>&copy Ben-Udacity 2020</p>
     </footer>
     <script src="js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
