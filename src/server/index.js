@@ -21,26 +21,54 @@ var textapi = new aylien({
     application_key: process.env.API_KEY
 });
 
+let analysedNews = []
+
 app.get('/', function (req, res) {
     res.sendFile('index.html', { root: './src/client' });
 })
 // "https://us.cnn.com/2020/03/17/us/kentucky-refused-quarantine-coronavirus-trnd/index.html"
 app.post("/classify", (req, res) => {
-    textapi.sentiment({ 'url':  req.body}, (error, response) => {
-        if (error == null) {
-            console.log(response);
-            var print = response.text //returns the text content of the JSON
-            res.send(print)
+    textapi.classify(req.body, (error, response) => {
+        if (error === null) {
+            // console.log(response);
+            let aylienNews = {
+                Lang: response.language,
+                Label: response.categories[0].label,
+                Conf: response.categories[0].confidence,
+                Text: response.text,
+            }
+            analysedNews.push(aylienNews)
+            res.send(analysedNews)
         } else {
             console.log('there was an error:', error)
         }
     });
 });
 
-// app.get('/form', getNLP)
+app.post("/extract", (req, res) => {
+    textapi.extract(req.body, (error, response) => {
+        if (error === null) {
+            // console.log(response);
+            let aylienNews = {
+                Title: response.title,
+                Article: response.article,
+                Author: response.author,
+                Feeds: response.feeds,
+                PublishDate: response.publishDate
+            }
+            analysedNews.push(aylienNews)
+            res.send(analysedNews)
+        } else {
+            console.log('there was an error:', error)
+        }
+    });
+});
 
-getNLP = () => {
-    console.log("API called")
+app.get('/form', getNLP)
+
+function getNLP (req, res) {
+    res.send(analysedNews)
+    console.log(res)
 }
 
 const port = 3080;
