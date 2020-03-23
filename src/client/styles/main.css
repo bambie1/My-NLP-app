@@ -5,7 +5,7 @@ body {
 } */
 
 main {
-    min-height: 81vh;
+    min-height: 130vh;
 }
 
 body{
@@ -27,6 +27,10 @@ footer {
 @media only screen and (min-width: 768px) {
     main.container {
         width: 63%;
+    }
+
+    main {
+        min-height: 100vh;
     }
 
 }

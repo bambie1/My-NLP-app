@@ -33,13 +33,15 @@
         <section class="py-4">
             <form class="pb-4" onsubmit="return handleSubmit(event)">
                 <input id="url" type="text" name="input" value="" placeholder="Please enter an article url" size=50>
-                <button id="classify" class="submit">Classification</button>
-                <button id="extract" class="submit">Article Extraction</button>
-                
+                <div>
+                    <button id="classify" class="submit">Classification</button>
+                    <button id="extract" class="submit">Article Extraction</button>
+                </div>
+
             </form>
 
             <section class="api-info">
-                <strong>Form Results:</strong>
+                <strong>-- FORM RESULTS --</strong>
                 <div class="container-fluid" id="results" style="width:100%; clear:both;">
                 </div>
 
