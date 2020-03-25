@@ -1,0 +1,36 @@
+/* $bg: grey;
+
+body {
+    background: $bg;
+} */
+
+main {
+    min-height: 130vh;
+}
+
+body{
+    min-width: fit-content;
+}
+.navbar-brand {
+    letter-spacing: 1.4vw;
+    max-width: 100%;
+}
+
+footer {
+    min-height: 10vh;
+}
+
+.api-info{
+    background-color: #d6e5c9c7
+}
+
+@media only screen and (min-width: 768px) {
+    main.container {
+        width: 63%;
+    }
+
+    main {
+        min-height: 100vh;
+    }
+
+}
