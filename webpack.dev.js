@@ -1,9 +1,10 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
+const regeneratorRuntime =  require("regenerator-runtime");
 
 module.exports = {
-    entry: './src/client/js/index.js',
+    entry: ['babel-polyfill', './src/client/js/index.js'],
     // mode: 'production',
     module: {
         rules: [
