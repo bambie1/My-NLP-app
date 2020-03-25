@@ -1,4 +1,5 @@
 import '../styles/main.scss'
+import "regenerator-runtime/runtime.js";
 
 // console.log("This is my news index file")
 $(document).ready(function () {
