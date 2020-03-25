@@ -4,7 +4,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin")
 
 module.exports = {
     entry: './src/client/js/index.js',
-    // mode: 'production',
+    mode: 'development',
     module: {
         rules: [
             {
