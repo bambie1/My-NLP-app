@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const TerserPlugin = require('terser-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 //const regeneratorRuntime =  require("regenerator-runtime");
 
 module.exports = {
@@ -30,7 +31,8 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: '[name].css'
-        })
+        }),
+        new WorkboxPlugin.GenerateSW()
     ],
     optimization: {
         minimize: true,
