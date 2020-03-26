@@ -6,7 +6,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 //const regeneratorRuntime =  require("regenerator-runtime");
 
 module.exports = {
-    entry: './src/client/js/index.js',
+    entry: './src/client/index.js',
     mode: 'production',
     module: {
         rules: [
