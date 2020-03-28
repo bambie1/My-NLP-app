@@ -4,7 +4,7 @@ This app uses the Aylien API (you'll need to sign up on the [aylien](https://dev
 ## Installation
 Clone or download the repo `git clone https://github.com/bambie1/My-NLP-app.git`, the install npm `npm install` and Babel `npm install --save-dev babel-loader @babel/core`
 
-##Execution
+## Execution
 To start up the server, you can use any of these commands
 ```
 npm start
