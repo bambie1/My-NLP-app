@@ -72,7 +72,7 @@ function getNLP (req, res) {
     console.log(res)
 }
 
-const port = 3070;
+const port = process.env.PORT || 3070;
 const server = app.listen(port, listening)
 
 // Callback to debug
