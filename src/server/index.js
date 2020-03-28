@@ -13,7 +13,8 @@ app.use(cors());// Cors for cross origin allowance
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Initialize the main project folder
-app.use(express.static('./src/client'));
+app.use(express.static('dist'));
+console.log(__dirname)
 
 var aylien = require('aylien_textapi');
 var textapi = new aylien({
@@ -24,7 +25,7 @@ var textapi = new aylien({
 let analysedNews = []
 
 app.get('/', function (req, res) {
-    res.sendFile('index.html', { root: './src/client' });
+    res.sendFile('dist/index.html');
 })
 // "https://us.cnn.com/2020/03/17/us/kentucky-refused-quarantine-coronavirus-trnd/index.html"
 app.post("/classify", (req, res) => {
@@ -71,7 +72,7 @@ function getNLP (req, res) {
     console.log(res)
 }
 
-const port = 3080;
+const port = process.env.PORT || 3070;
 const server = app.listen(port, listening)
 
 // Callback to debug
